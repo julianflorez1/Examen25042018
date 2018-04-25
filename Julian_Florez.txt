@@ -1,0 +1,52 @@
+Parte 1
+
+plsql.execute <<-SQL
+
+create tablespace mid_term
+datafile 'Julian.dbf' size 20M
+
+SQL
+
+plsql.execute <<-SQL
+
+CREATE PROFILE Examen LIMIT
+IDLE_TIME                       5
+FAILED_LOGIN_ATTEMPTS           2
+
+SQL
+
+plsql.execute <<-SQL
+
+CREATE USER ejercicios
+IDENTIFIED BY ejercicios
+DEFAULT TABLESPACE mid_term
+QUOTA unlimited on mid_term
+PROFILE Examen
+GRANT DBA TO ejercicios
+GRANT CREATE SESSION TO ejercicios
+
+SQL
+
+//////////////////////////////////////////////////////////////////////////
+
+Parte 2
+
+plsql(:data).execute <<-SQL
+ -- CREACION VISTA 1 SIN PUNTO Y COMA
+ -- EJEMPLO CREATE VIEW ...
+SQL
+
+plsql(:data).execute <<-SQL
+ -- CREACION VISTA 2 SIN PUNTO Y COMA
+ -- EJEMPLO CREATE VIEW ...
+SQL
+
+plsql(:data).execute <<-SQL
+ -- CREACION VISTA 3 SIN PUNTO Y COMA
+ -- EJEMPLO CREATE VIEW ...
+SQL
+
+plsql(:data).execute <<-SQL
+ -- CREACION VISTA 4 SIN PUNTO Y COMA
+ -- EJEMPLO CREATE VIEW ...
+SQL
